@@ -85,7 +85,6 @@
 		409993F71A1180D6003D5E79 /* ControllingSource */ = {
 			isa = PBXGroup;
 			children = (
-				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
 				409993FA1A1180D6003D5E79 /* AppDelegate.swift */,
 				4099941F1A11855A003D5E79 /* View Controllers */,
 				409994201A118575003D5E79 /* Resources */,
@@ -133,6 +132,7 @@
 			children = (
 				409994031A1180D6003D5E79 /* Main.storyboard */,
 				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
+				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
 				409994061A1180D6003D5E79 /* Images.xcassets */,
 				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
 				404284841A12E4A20053ECF1 /* README.md */,
