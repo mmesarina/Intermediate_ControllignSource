@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		35F29EA41A12C9BD00F4AEB1 /* QuotesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */; };
+		404284851A12E4A20053ECF1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 404284841A12E4A20053ECF1 /* README.md */; };
 		409993FB1A1180D6003D5E79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409993FA1A1180D6003D5E79 /* AppDelegate.swift */; };
 		409993FE1A1180D6003D5E79 /* ControllingSource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */; };
 		409994001A1180D6003D5E79 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409993FF1A1180D6003D5E79 /* MasterViewController.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QuotesList.plist; sourceTree = "<group>"; };
+		404284841A12E4A20053ECF1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		409993F51A1180D6003D5E79 /* ControllingSource.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControllingSource.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		409993F91A1180D6003D5E79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		409993FA1A1180D6003D5E79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,9 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				409994031A1180D6003D5E79 /* Main.storyboard */,
+				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
 				409994061A1180D6003D5E79 /* Images.xcassets */,
 				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
-				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
+				404284841A12E4A20053ECF1 /* README.md */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				409993FE1A1180D6003D5E79 /* ControllingSource.xcdatamodeld in Sources */,
 				409993FB1A1180D6003D5E79 /* AppDelegate.swift in Sources */,
+				404284851A12E4A20053ECF1 /* README.md in Sources */,
 				409994001A1180D6003D5E79 /* MasterViewController.swift in Sources */,
 				409994021A1180D6003D5E79 /* DetailViewController.swift in Sources */,
 			);
