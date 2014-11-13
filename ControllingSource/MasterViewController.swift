@@ -35,12 +35,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func insertNewObject(sender: AnyObject) {
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
-        let newManagedObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as NSManagedObject
-             
+        let newQuoteObject = NSEntityDescription.insertNewObjectForEntityForName(entity.name!, inManagedObjectContext: context) as QuoteObject
+        
         // If appropriate, configure the new managed object.
-        // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-        newManagedObject.setValue(NSDate(), forKey: "timeStamp")
-             
+        newQuoteObject.personName = "Anonymous"
+        newQuoteObject.famousQuote = "This should be a famous quote"
+        
         // Save the context.
         var error: NSError? = nil
         if !context.save(&error) {
@@ -56,8 +56,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-            (segue.destinationViewController as DetailViewController).detailItem = object
+                let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as QuoteObject
+                (segue.destinationViewController as DetailViewController).quoteObject = object
             }
         }
     }
@@ -100,8 +100,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("timeStamp")!.description
+        let quoteObject = self.fetchedResultsController.objectAtIndexPath(indexPath) as QuoteObject
+        cell.textLabel.text = quoteObject.famousQuote
     }
 
     // MARK: - Fetched results controller
@@ -113,14 +113,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         let fetchRequest = NSFetchRequest()
         // Edit the entity name as appropriate.
-        let entity = NSEntityDescription.entityForName("Event", inManagedObjectContext: self.managedObjectContext!)
+        let entity = NSEntityDescription.entityForName("QuoteObject", inManagedObjectContext: self.managedObjectContext!)
         fetchRequest.entity = entity
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timeStamp", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "personName", ascending: true)
         let sortDescriptors = [sortDescriptor]
         
         fetchRequest.sortDescriptors = [sortDescriptor]

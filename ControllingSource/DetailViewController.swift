@@ -10,10 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    @IBOutlet weak var personNameLabel: UILabel!
+    @IBOutlet weak var famousQuoteLabel: UILabel!
 
-
-    var detailItem: AnyObject? {
+    var quoteObject: QuoteObject? {
         didSet {
             // Update the view.
             self.configureView()
@@ -22,9 +22,12 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.valueForKey("timeStamp")!.description
+        if let quote: QuoteObject = quoteObject {
+            if let personLabel = personNameLabel {
+                personLabel.text = quote.personName
+            }
+            if let quoteLabel = famousQuoteLabel {
+                quoteLabel.text = quote.famousQuote
             }
         }
     }
