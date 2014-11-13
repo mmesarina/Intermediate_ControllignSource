@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		35F29EA41A12C9BD00F4AEB1 /* QuotesList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */; };
-		404284851A12E4A20053ECF1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 404284841A12E4A20053ECF1 /* README.md */; };
 		409993FB1A1180D6003D5E79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409993FA1A1180D6003D5E79 /* AppDelegate.swift */; };
 		409993FE1A1180D6003D5E79 /* ControllingSource.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */; };
 		409994001A1180D6003D5E79 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409993FF1A1180D6003D5E79 /* MasterViewController.swift */; };
@@ -86,8 +85,14 @@
 			isa = PBXGroup;
 			children = (
 				409993FA1A1180D6003D5E79 /* AppDelegate.swift */,
-				4099941F1A11855A003D5E79 /* View Controllers */,
-				409994201A118575003D5E79 /* Resources */,
+				409993FF1A1180D6003D5E79 /* MasterViewController.swift */,
+				409994011A1180D6003D5E79 /* DetailViewController.swift */,
+				409994031A1180D6003D5E79 /* Main.storyboard */,
+				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
+				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
+				409994061A1180D6003D5E79 /* Images.xcassets */,
+				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
+				404284841A12E4A20053ECF1 /* README.md */,
 				409993F81A1180D6003D5E79 /* Supporting Files */,
 			);
 			path = ControllingSource;
@@ -116,28 +121,6 @@
 				409994141A1180D6003D5E79 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4099941F1A11855A003D5E79 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				409993FF1A1180D6003D5E79 /* MasterViewController.swift */,
-				409994011A1180D6003D5E79 /* DetailViewController.swift */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		409994201A118575003D5E79 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				409994031A1180D6003D5E79 /* Main.storyboard */,
-				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
-				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
-				409994061A1180D6003D5E79 /* Images.xcassets */,
-				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
-				404284841A12E4A20053ECF1 /* README.md */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +226,6 @@
 			files = (
 				409993FE1A1180D6003D5E79 /* ControllingSource.xcdatamodeld in Sources */,
 				409993FB1A1180D6003D5E79 /* AppDelegate.swift in Sources */,
-				404284851A12E4A20053ECF1 /* README.md in Sources */,
 				409994001A1180D6003D5E79 /* MasterViewController.swift in Sources */,
 				409994021A1180D6003D5E79 /* DetailViewController.swift in Sources */,
 			);
