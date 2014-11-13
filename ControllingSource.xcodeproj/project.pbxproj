@@ -63,6 +63,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40019D9D1A145FA30036ACEC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				409993FF1A1180D6003D5E79 /* MasterViewController.swift */,
+				409994011A1180D6003D5E79 /* DetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		40019D9E1A145FB00036ACEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				409994031A1180D6003D5E79 /* Main.storyboard */,
+				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
+				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
+				409994061A1180D6003D5E79 /* Images.xcassets */,
+				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
+				404284841A12E4A20053ECF1 /* README.md */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		409993EC1A1180D6003D5E79 = {
 			isa = PBXGroup;
 			children = (
@@ -85,14 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				409993FA1A1180D6003D5E79 /* AppDelegate.swift */,
-				409993FF1A1180D6003D5E79 /* MasterViewController.swift */,
-				409994011A1180D6003D5E79 /* DetailViewController.swift */,
-				409994031A1180D6003D5E79 /* Main.storyboard */,
-				409993FC1A1180D6003D5E79 /* ControllingSource.xcdatamodeld */,
-				35F29EA31A12C9BD00F4AEB1 /* QuotesList.plist */,
-				409994061A1180D6003D5E79 /* Images.xcassets */,
-				409994081A1180D6003D5E79 /* LaunchScreen.xib */,
-				404284841A12E4A20053ECF1 /* README.md */,
+				40019D9D1A145FA30036ACEC /* View Controllers */,
+				40019D9E1A145FB00036ACEC /* Resources */,
 				409993F81A1180D6003D5E79 /* Supporting Files */,
 			);
 			path = ControllingSource;

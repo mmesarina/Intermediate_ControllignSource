@@ -13,11 +13,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     var managedObjectContext: NSManagedObjectContext? = nil
 
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,11 +20,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     func insertNewObject(sender: AnyObject) {
@@ -73,6 +63,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         return sectionInfo.numberOfObjects
     }
 
+    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
+        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
+        cell.textLabel.text = object.valueForKey("timeStamp")!.description
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         self.configureCell(cell, atIndexPath: indexPath)
@@ -99,10 +94,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as NSManagedObject
-        cell.textLabel.text = object.valueForKey("timeStamp")!.description
-    }
 
     // MARK: - Fetched results controller
 
@@ -143,21 +134,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }    
     var _fetchedResultsController: NSFetchedResultsController? = nil
 
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        self.tableView.beginUpdates()
-    }
-
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
-        switch type {
-            case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            default:
-                return
-        }
-    }
-
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         switch type {
             case .Insert:
@@ -174,10 +150,25 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        switch type {
+            case .Insert:
+                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+            case .Delete:
+                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+            default:
+                return
+        }
+    }
+
     func controllerDidChangeContent(controller: NSFetchedResultsController) {
         self.tableView.endUpdates()
     }
-
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
+    }
+    
     /*
      // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
      
